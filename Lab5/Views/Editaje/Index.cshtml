@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Lab5.Models.Estampa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>ALBUM RUSIA 2018</h2>
+
+<p>
+    <button type="button" onclick="location.href = '@Url.Action("Agregar","Editaje")'">Obtener Estampa</button>
+    <button type="button" onclick="location.href = '@Url.Action("Eliminar","Editaje")'">Vender o Intercambiar Estampa</button>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dispo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dispo)
+            </td>
+        </tr>
+    }
+
+</table>
